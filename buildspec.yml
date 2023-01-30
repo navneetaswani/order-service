@@ -1,11 +1,4 @@
-version: 0.2
-
 phases:
-  install:
-    runtime-versions:
-      java: corretto17
-    commands:
-      - pip install --upgrade awscli
   pre_build:
     commands:
       - mvn clean install
@@ -34,4 +27,3 @@ artifacts:
   files:
    - imagedefinitions.json
    - target/order-service.jar
-
