@@ -1,12 +1,13 @@
 package com.javatechie.aws.cicd.example;
 
-/*@Data
-@AllArgsConstructor
-@NoArgsConstructor
-@ToString*/
+
 public class Order {
 
-    public int getId() {
+    @Override
+	public String toString() {
+		return "Order [id=" + id + ", name=" + name + ", quantity=" + quantity + ", price=" + price + "]";
+	}
+	public int getId() {
 		return id;
 	}
 	public Order() {
