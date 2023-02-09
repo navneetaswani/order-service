@@ -1,14 +1,17 @@
 version: 0.2
 
 phases:
-  install:
-    runtime-versions:
-      java: corretto8
+  pre_build:
+    commands:      
+      - echo Logging in to Amazon ECR...
+      - mvn clean package  
+  build:
+    commands:
+      - echo Build startedd on `date`   
   post_build:
     commands:
-      - mvn package
-      - mv target/order-service.jar order-service.jar
+      - echo Build completed on `date`
+ 
 artifacts:
   files:
-    - order-service.jar
-    - .ebextensions/**/*
+   - target/order-service.jar
